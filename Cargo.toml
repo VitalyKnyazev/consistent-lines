@@ -1,0 +1,20 @@
+[package]
+name = "consistent-lines"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.100"
+const_format = "0.2.35"
+elementtree = "1.2.3"
+rayon = "1.11.0"
+walkdir = "2.5.0"
+
+[profile.release]
+opt-level = 3       # Maximum optimisation
+lto = "fat"         # Link Time Optimisation
+codegen-units = 1   # Better optimisation, slower compile
+strip = true        # Remove debug symbols for smaller binary
+panic = "abort"     # Changes the panic strategy from the default unwind to abort - no resource release on exception
+debug = false       # Disables debug info generation - harder to debug
+incremental = false # Disable incremental compilation for release builds

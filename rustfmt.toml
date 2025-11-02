@@ -1,0 +1,5 @@
+max_width = 120              # default is 100, controls line wrapping
+tab_spaces = 4               # number of spaces per tab
+use_small_heuristics = "Max" # be more aggressive about keeping things inline
+reorder_imports = true       # group and sort imports
+newline_style = "Windows"    # or "Windows"
